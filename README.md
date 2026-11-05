@@ -1,2 +1,3 @@
 # hub-autopost
-Auto-Post fuer Instagram-Reels (Business Hub)
+
+Postet eingeplante Reels (queue/) per GitHub Actions. Verwaltet vom Business Hub (shared/instagram/cloud_queue.py).
