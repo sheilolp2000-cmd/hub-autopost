@@ -1,0 +1,41 @@
+name: Post due reels
+
+on:
+  schedule:
+    # Uhrzeiten in UTC. 22/23, 10/11 und 16/17 decken 00:00, 12:00 und 18:00 deutscher Zeit ab (Sommer- und Winterzeit).
+    # Minute 7 statt 0, weil GitHub zur vollen Stunde stark ausgelastet ist.
+    - cron: "7 22,23,10,11,16,17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-reels
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Post
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTOPOST_PAT: ${{ secrets.AUTOPOST_PAT }}
+          INSTAGRAM_TOKEN_GTA: ${{ secrets.INSTAGRAM_TOKEN_GTA }}
+          INSTAGRAM_TOKEN_CATS: ${{ secrets.INSTAGRAM_TOKEN_CATS }}
+          INSTAGRAM_TOKEN_TRADING: ${{ secrets.INSTAGRAM_TOKEN_TRADING }}
+        run: python post_due.py
+      - name: Save status
+        if: always()
+        run: |
+          git config user.name "autopost"
+          git config user.email "autopost@users.noreply.github.com"
+          git add queue state 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "status update" && git pull --rebase && git push)
