@@ -4,5 +4,7 @@
   "video_name": "Day 2 The 82% Win Rate Was A Lie.mp4",
   "caption": "Day 2: The 82% Win Rate Was A Lie\n\nMy AI found an 82% win rate. Then I looked closer. Partial exits counted one trade as two wins, and a few lucky trades made the whole profit. New rules from today.\n\nMy live bot is on MEXC copy trading, link in bio.\nNot financial advice. Crypto is risky. Only trade what you can afford to lose.\n\nFollow @trading1milllion for daily AI trading experiments 📈\n\n#trading #aitrading #tradingbot #crypto #memecoins #claudecode #daytrading #cryptotrading #backtesting #reels",
   "publish_at": "2026-11-05T18:00:00+01:00",
-  "status": "pending"
+  "status": "pending",
+  "attempts": 1,
+  "error": "POST 17841440586493355/media: {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'AuEJmDnWStTmwSCJaXgCR37'}"
 }
