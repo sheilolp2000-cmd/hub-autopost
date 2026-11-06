@@ -4,7 +4,7 @@
   "video_name": "GTA 6 Facts 1.mp4",
   "caption": "GTA 6 Release Date Confirmed: November 19 🔥\n\nGta 6 drops november 19 😳 Would you survive this?\nFollow @gta.sickxs for daily GTA chaos 🔥\nFull compilations on YouTube, link in bio\n\n🎮 Gameplay: Dope Gameplays (https://www.youtube.com/watch?v=8F2ZvtkVUcs), licensed under CC BY\n🎵 Music: LA VIDA! by CryJaxx, MVRPHiN, Lucy Malfroy | NCS https://ncs.io/LAVIDA\nNot affiliated with Rockstar Games.\n\n#gta5 #gta6 #gta #gtasicks #gaming #gtaonline #reels #gta6releasedate #gta6november19 #gta6ps5",
   "publish_at": "2026-11-05T12:00:00+01:00",
-  "status": "pending",
-  "attempts": 2,
-  "error": "POST 17841425569921878/media: {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'A7cPoE70ToqNF4JJ_93DTbp'}"
+  "status": "failed",
+  "attempts": 3,
+  "error": "POST 17841425569921878/media: {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'A9F7PJ_zJAUdYds5AGV4oaP'}"
 }
