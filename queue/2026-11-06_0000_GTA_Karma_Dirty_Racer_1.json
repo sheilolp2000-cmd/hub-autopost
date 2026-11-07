@@ -5,6 +5,6 @@
   "caption": "GTA 5 Crazy Stunts & Mega Ramps 💀\n\nWait for the insane stunt jump 😳 Would you survive this?\nFollow @gta.sickxs for daily GTA chaos 🔥\nFull compilations on YouTube, link in bio\n\n🎮 Gameplay: The Vipor (https://www.youtube.com/watch?v=P0Pymdr9bMs), licensed under CC BY\n🎵 Music: fellshortofhell by THIRST | NCS https://ncs.io/fellshortofhell\nNot affiliated with Rockstar Games.\n\n#gta5 #gta6 #gta #gtasicks #gaming #gtaonline #reels #stunt #megaramp #fail",
   "publish_at": "2026-11-06T00:00:00+01:00",
   "status": "pending",
-  "attempts": 1,
-  "error": "POST 17841425569921878/media: {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'AOKgX3o3kJOplEwJ_hC92y5'}"
+  "attempts": 2,
+  "error": "POST 17841425569921878/media: {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'AbT_v40XHjdoCPEeOHSJx95'}"
 }
