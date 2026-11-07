@@ -4,7 +4,7 @@
   "video_name": "GTA 6 Facts 2.mp4",
   "caption": "Lucia Makes GTA History 😳 GTA 6\n\nGta 6 makes history 😳 Would you survive this?\nFollow @gta.sickxs for daily GTA chaos 🔥\nFull compilations on YouTube, link in bio\n\n🎮 Gameplay: Dope Gameplays (https://www.youtube.com/watch?v=8F2ZvtkVUcs), licensed under CC BY\n🎵 Music: MONTAGEM INDIA by GxL | NCS https://ncs.io/montagemindia\nNot affiliated with Rockstar Games.\n\n#gta5 #gta6 #gta #gtasicks #gaming #gtaonline #reels #gta6lucia #gta6jason #gta6characters",
   "publish_at": "2026-11-06T12:00:00+01:00",
-  "status": "pending",
-  "attempts": 2,
-  "error": "POST 17841425569921878/media: {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'Ai2e1D1rNSUwpXfQIJWIMLm'}"
+  "status": "failed",
+  "attempts": 3,
+  "error": "POST 17841425569921878/media: {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'AZfXXZYaTL9iTAtdisFLvCV'}"
 }
