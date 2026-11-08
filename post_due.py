@@ -59,27 +59,14 @@ def token_for(acc):
     return token
 
 
-def download_asset(asset_id, dest):
-    r = requests.get(f"{GH}/repos/{REPO}/releases/assets/{asset_id}", stream=True, timeout=300,
-                     headers={**GH_HEAD, "Accept": "application/octet-stream"})
-    r.raise_for_status()
-    with open(dest, "wb") as f:
-        for chunk in r.iter_content(1 << 20):
-            f.write(chunk)
-
-
 def post(item, token):
+    # Instagram API with Instagram Login has no resumable upload ("video_url is required", 2026-11-08):
+    # Instagram fetches the reel itself from the public release asset URL (repo must be public).
     uid = ig("GET", "me", token, fields="user_id")["user_id"]
-    video = Path("/tmp/reel.mp4")
-    download_asset(item["asset_id"], video)
-    size = video.stat().st_size
-    c = ig("POST", f"{uid}/media", token, media_type="REELS", upload_type="resumable",
+    asset = requests.get(f"{GH}/repos/{REPO}/releases/assets/{item['asset_id']}", headers=GH_HEAD, timeout=60)
+    asset.raise_for_status()
+    c = ig("POST", f"{uid}/media", token, media_type="REELS", video_url=asset.json()["browser_download_url"],
            caption=item["caption"], share_to_feed="true")
-    with open(video, "rb") as f:
-        r = requests.post(c["uri"], data=f, timeout=900,
-                          headers={"Authorization": f"OAuth {token}", "offset": "0", "file_size": str(size)})
-    if r.status_code >= 400:
-        raise RuntimeError(f"Upload: {r.status_code} {r.text[:300]}")
     for _ in range(90):
         st = ig("GET", c["id"], token, fields="status_code,status")
         if st["status_code"] == "FINISHED":
