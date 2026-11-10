@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hub Autopost connected</title><style>:root{--bg:#fff;--ink:#1a1a1a;--mute:#666}
+@media (prefers-color-scheme:dark){:root{--bg:#141414;--ink:#eee;--mute:#aaa}}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 16px}
+a{color:inherit}small{color:var(--mute)}code{font-size:15px;word-break:break-all}
+button{padding:8px 14px;border-radius:6px;border:0;background:var(--ink);color:var(--bg);cursor:pointer}</style><body><h1>Almost done</h1>
+<p>Copy this code and paste it into Claude:</p><p><code id="c">–</code></p>
+<button onclick="navigator.clipboard.writeText(document.getElementById('c').textContent);this.textContent='Copied ✓'">Copy code</button>
+<script>const p=new URLSearchParams(location.search);
+document.getElementById('c').textContent=p.get('code')?p.get('code')+'|'+(p.get('state')||''):(p.get('error_description')||p.get('error')||'No code in URL');</script><p><small><a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></small></p></body></html>
