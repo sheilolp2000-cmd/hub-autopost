@@ -23,7 +23,7 @@ REPO = os.environ["GITHUB_REPOSITORY"]
 GH_HEAD = {"Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}", "X-GitHub-Api-Version": "2022-11-28"}
 QUEUE = Path("queue")
 STATE = Path("state")
-MAX_PER_RUN = 2
+MAX_PER_RUN = 3
 MAX_ATTEMPTS = 3
 REFRESH_EVERY_DAYS = 7
 
