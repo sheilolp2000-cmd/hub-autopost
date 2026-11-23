@@ -65,8 +65,9 @@ def post(item, token):
     uid = ig("GET", "me", token, fields="user_id")["user_id"]
     asset = requests.get(f"{GH}/repos/{REPO}/releases/assets/{item['asset_id']}", headers=GH_HEAD, timeout=60)
     asset.raise_for_status()
+    extra = {"thumb_offset": int(item["cover_ms"])} if item.get("cover_ms") else {}   # cover frame (ms), default = first frame (blank)
     c = ig("POST", f"{uid}/media", token, media_type="REELS", video_url=asset.json()["browser_download_url"],
-           caption=item["caption"], share_to_feed="true")
+           caption=item["caption"], share_to_feed="true", **extra)
     for _ in range(90):
         st = ig("GET", c["id"], token, fields="status_code,status")
         if st["status_code"] == "FINISHED":
