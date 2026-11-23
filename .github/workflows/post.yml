@@ -2,9 +2,9 @@ name: Post due reels
 
 on:
   schedule:
-    # Uhrzeiten in UTC. 22/23, 10/11 und 16/17 decken 00:00, 12:00 und 18:00 deutscher Zeit ab (Sommer- und Winterzeit).
-    # Minute 7 statt 0, weil GitHub zur vollen Stunde stark ausgelastet ist.
-    - cron: "7 22,23,10,11,16,17 * * *"
+    # Stündlich (Minute 7). Seit dem 20.11. ließ GitHub die geplanten Läufe um 12:00 und 18:00 aus (nur ein Lauf pro Nacht),
+    # dadurch staute sich die Queue. Mit stündlichen Läufen kommt mindestens einer pro Slot durch; ohne Fälliges tut der Lauf nichts.
+    - cron: "7 * * * *"
   workflow_dispatch:
 
 permissions:
